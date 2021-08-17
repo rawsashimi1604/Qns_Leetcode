@@ -9,10 +9,15 @@ class Solution:
                 hashmap[num] += 1
             else:
                 hashmap[num] = 1
-
+        n = len(nums)
         valList = list(hashmap.values())
         keyList = list(hashmap.keys())
-        return keyList[valList.index(max(valList))]
+
+        for i in range(n):
+            if valList[i] > n/2:
+                return keyList[i]
+
+        return -1
 
 
 test = Solution()
