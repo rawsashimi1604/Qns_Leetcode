@@ -1,12 +1,26 @@
-from typing import List
-
-
-class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        hashmap = {}
+        
+        # Add to hashmap, number as key, val as index 
         for i in range(len(nums)):
-            for j in range(1, len(nums)):
-                if i != j:
-                    if nums[i] + nums[j] == target:
-                        return [i, j]
-
+            hashmap[nums[i]] = i
+            
+        # Iterate through arr, find difference, cmp to hashmap
+        for i in range(len(nums)):
+            diff = target - nums[i]
+            if diff in hashmap and hashmap[diff] != i:
+                return[i, hashmap[diff]]
+            
+            else:
+                diff = 0
+        
         return []
+            
+        
+                
