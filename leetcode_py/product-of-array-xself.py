@@ -4,25 +4,18 @@ from typing import List
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         # Get product of every value of left
-        leftArr = []
+        leftArr = [1]
         leftVal = 1
-        for i in range(len(nums)):
-            if i == 0:
-                leftArr.append(1)
-
-            else:
-                leftVal *= nums[i-1]
-                leftArr.append(leftVal)
+        for i in range(1, len(nums)):
+            leftVal *= nums[i-1]
+            leftArr.append(leftVal)
 
         # Get product of every value of right
-        rightArr = []
+        rightArr = [1]
         rightVal = 1
-        for i in range(len(nums) - 1, -1, -1):
-            if i == len(nums) - 1:
-                rightArr.append(1)
-            else:
-                rightVal *= nums[i+1]
-                rightArr.append(rightVal)
+        for i in range(len(nums) - 2, -1, -1):
+            rightVal *= nums[i+1]
+            rightArr.append(rightVal)
 
         rightArr.reverse()
 
