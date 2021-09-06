@@ -17,7 +17,6 @@ class Solution:
 
             res.append(int(tmp))
 
-        print(res)
         return max(res)
 
 
