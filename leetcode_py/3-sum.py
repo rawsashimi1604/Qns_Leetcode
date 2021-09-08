@@ -33,7 +33,6 @@ class Solution:
             outputArr[i] = list(outputArr[i])
             outputArr[i].sort()
 
-        print(outputArr)
         return outputArr
 
 
