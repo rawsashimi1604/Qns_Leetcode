@@ -16,3 +16,6 @@ class Solution:
                 return key
 
         return 0
+
+
+print(min(float('inf'), -1))
